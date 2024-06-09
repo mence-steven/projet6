@@ -74,6 +74,20 @@ function createGallery(works) {
 function createFilters(categories) {
     const parentFiltres = document.querySelector('.filtres');
 
+    const token = localStorage.getItem("token");
+    if (token) {
+        const logoModifier = document.createElement('div')
+        const modifierButton = document.createElement('button');
+        modifierButton.textContent = 'modifier';
+        modifierButton.className = 'modifier_button'
+
+        const bandeau = document.querySelector('.bandeau')
+        bandeau.style.display = 'flex'
+
+        parentFiltres.appendChild(modifierButton);
+    }
+
+    else {
     const allButton = document.createElement('button');
     allButton.textContent = 'Tous';
     allButton.className = 'filtre bouton_0 filtre_actif';
@@ -84,6 +98,7 @@ function createFilters(categories) {
     });
  
     parentFiltres.appendChild(allButton);
+
  
     categories.forEach((category, index) => {
         const button = document.createElement('button');
@@ -104,6 +119,7 @@ function createFilters(categories) {
  
         parentFiltres.appendChild(button);
     });
+}
 }
 
 
@@ -131,3 +147,5 @@ function filterGallery(categoryId) {
 }
 
 /*********************** FIN code final API gallery + filtre ****************/
+
+/*************** *******/
