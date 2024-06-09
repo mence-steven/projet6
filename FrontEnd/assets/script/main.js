@@ -76,15 +76,19 @@ function createFilters(categories) {
 
     const token = localStorage.getItem("token");
     if (token) {
+        /*
         const logoModifier = document.createElement('div')
         const modifierButton = document.createElement('button');
         modifierButton.textContent = 'modifier';
-        modifierButton.className = 'modifier_button'
+        modifierButton.className = 'modifier_button'*/
 
+        //parentFiltres.appendChild(modifierButton);
+
+        const btnModifier = document.querySelector('.btn_modifier')
         const bandeau = document.querySelector('.bandeau')
+        btnModifier.style.display = 'flex'
         bandeau.style.display = 'flex'
 
-        parentFiltres.appendChild(modifierButton);
     }
 
     else {
