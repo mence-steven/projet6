@@ -36,9 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
     } 
     else if (response.status === 401) {
         console.error("Not Authorized:", data);
+        alert("Erreur : mot de passe incorrect.");
     } 
     else if (response.status === 404) {
         console.error("User not found:", data);
+        alert("Erreur : adresse e-mail non trouvée.");
     }
 });
 
