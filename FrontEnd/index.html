@@ -78,46 +78,50 @@
 	</nav>
 </footer>
 
-
-<section class="modal">
-	<button class="btn_close"><i class="fa-solid fa-xmark"></i></button>
-	<h3 class="galerie_photo">Galerie photo</h3>
-	<div class="container_galerie">
-	</div>
-	<button class="ajouter_galerie">Ajouter une photo</button>
-</section>
-
-<section class="modal_ajout">
-	<div class="retour_croix">
-		<i class="fa-solid fa-arrow-left"></i>
-		<i class="fa-solid fa-xmark"></i>
-	</div>
-	<div class="logo_image_preview">
-		<div class="logo_image">
-			<i class="fa-regular fa-image"></i>
-			<div class="plus_photo">
-				<i class="fa-solid fa-plus"></i>
-				<p>Ajouter photo</p>
-				<input type="file" id="image_pc" accept="image/jpeg, image/png" style="display: none;">
-			</div>
-			<p>jpg. png : 4mo max</p>		
+<div class="groupe_modal">
+	<section class="modal">
+		<button class="btn_close"><i class="fa-solid fa-xmark"></i></button>
+		<h3 class="galerie_photo">Galerie photo</h3>
+		<div class="container_galerie">
 		</div>
-	</div>
-	<div class="form_titre">
-		<label for="title">Titre</label>
-		<input type="text" id="title" name="title" required>		
-	</div>
-	<div class="form_categorie">
-		<label for="categorie">Catégorie</label>
-		<select id="categorie" name="categorie" required>
-			<option value="" disabled selected>Selectionné une catégorie</option>
+		<div class="line"></div>
+		<button class="ajouter_galerie">Ajouter une photo</button>
+	</section>
 
-		</select>
-		
-	</div>
-	<button type="submit" class="btn_valide">Valider</button>	
+	<section class="modal_ajout">
+		<div class="retour_croix">
+			<i class="fa-solid fa-arrow-left"></i>
+			<i class="fa-solid fa-xmark"></i>
+		</div>
+		<h3>Ajout photo</h3>
+		<div class="logo_image_preview">
+			<div class="logo_image">
+				<i class="fa-regular fa-image"></i>
+				<div class="plus_photo">
+					<i class="fa-solid fa-plus"></i>
+					<p>Ajouter photo</p>
+					<input type="file" id="image_pc" accept="image/jpeg, image/png" style="display: none;">
+				</div>
+				<p class="info_format">jpg. png : 4mo max</p>		
+			</div>
+		</div>
+		<div class="form_titre">
+			<label for="title">Titre</label>
+			<input type="text" id="title" name="title" required>		
+		</div>
+		<div class="form_categorie">
+			<label for="categorie">Catégorie</label>
+			<select id="categorie" name="categorie" required>
+				<option value="" disabled selected>Selectionné une catégorie</option>
+
+			</select>
+
+		</div>
+		<div class="line"></div>
+		<button type="submit" class="btn_valide">Valider</button>	
 
 </section>
+</div>
 
 </body>
 </html>
