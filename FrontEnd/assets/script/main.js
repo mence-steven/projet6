@@ -138,15 +138,14 @@ document.addEventListener("DOMContentLoaded", async function() {
         modalAjout.style.display = 'none';
         groupeModal.style.display = 'none';
     });
-
-    // Ferme la modale si on clique en dehors
-    window.onclick = function(event) {
-        if (event.target === groupeModal) {
+    
+    document.addEventListener('click', function(event) {
+        if (!groupeModal.contains(event.target) && !modalAjout.contains(event.target) && !btnModifier.contains(event.target)) {
             groupeModal.style.display = 'none';
             modal.style.display = 'none';
             modalAjout.style.display = 'none';
         }
-    }
+    });
 
     // Suppression des travaux
     const workss = await fetch("http://localhost:5678/api/works").then(res => res.json());
@@ -286,19 +285,18 @@ document.addEventListener("DOMContentLoaded", async function() {
 
             if (response.ok) {
                 alert('Ajouté à la galerie');
-                modalAjout.style.display = 'flex';
 
                 const newWork = await response.json();
                 loopGallery(newWork); // Ajouter seulement le nouveau travail à la galerie
                 displayGalleryPhoto([newWork]);
 
-                modalAjout.style.display = 'flex';
-
                 // Réinitialisation du formulaire
                 document.getElementById('title').value = '';
-                document.getElementById('categorie').value = '';
-                file = '';
-
+                document.getElementById('categorie').selectedIndex = 0;
+                imageInput.value = '';
+                //logoImagePreview.innerHTML = '';
+                logoImage.style.display = 'flex';
+                
             } else if (response.status === 400) {
                 alert('Requête incorrecte.');
             } else if (response.status === 401) {
